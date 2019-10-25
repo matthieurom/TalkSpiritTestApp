@@ -1,0 +1,115 @@
+$color-black: rgb(48, 48, 48);
+$color-grey: rgb(150, 150, 150);
+
+$color-green-light: #7ed56f;
+$color-green-dark: #28b485;
+
+.main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-content,
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    background-image: linear-gradient(
+      to right,
+      $color-green-light,
+      $color-green-dark
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.form-content {
+  padding: 3rem;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rgba($color-black, 0.15);
+  width: 50%;
+  background-color: white;
+  h2 {
+    margin: 3rem;
+  }
+}
+
+.form-content form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  width: 100%;
+}
+
+.form-content form input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 3rem;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border: 3px solid transparent;
+  box-shadow: 0 2px 5px rgba($color-black, 0.25);
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid $color-green-dark;
+  }
+  &:placeholder-shown + label {
+    width: 10rem;
+    transform: translateY(0);
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+.form-input {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+  label {
+    padding-left: 0.8rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    font-size: 0.9rem;
+    color: $color-green-light;
+    width: 10rem;
+    visibility: visible;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    transform: translateY(3rem);
+    transition: all 0.5s ease;
+    // transform: translateY(0);
+  }
+}
+.form-content-button {
+  button {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 100;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: $color-green-dark;
+    border: none;
+    padding: 1rem 3rem;
+
+    &:active {
+      outline: none;
+      background-color: $color-green-light;
+    }
+  }
+}
